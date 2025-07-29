@@ -1,0 +1,75 @@
+#Original
+configName: Original
+imageType: Original
+binWidth: 25
+verbose: False 
+padDistance: 0
+preCrop: True
+
+#LoG
+configName: LoG
+imageType: LoG
+sigma: [1.0, 3.0, 5.0, 10.0]
+binWidth: 25
+verbose: False 
+padDistance: 10
+preCrop: True
+
+#Wavelet Coif3
+configName: Wavelet_Coif3
+imageType: Wavelet
+start_level: 0
+level: 1
+wavelet: coif3
+binWidth: 25
+verbose: False 
+padDistance: 10
+preCrop: True
+
+#Gabor_S8Fp5A0
+configName: Gabor_S8Fp5A0
+imageType: Gabor
+binWidth: 25
+verbose: False
+padDistance: 10
+preCrop: False
+size: 8
+freq: 0.5
+angle: 0
+save: False
+
+#Gabor_S8Fp5A45
+configName: Gabor_S8Fp5A45
+imageType: Gabor
+binWidth: 25
+verbose: False
+padDistance: 10
+preCrop: False
+size: 8
+freq: 0.5
+angle: math.pi/4
+save: False
+
+#Gabor_S8Fp5A90
+configName: Gabor_S8Fp5A90
+imageType: Gabor
+binWidth: 25
+verbose: False
+padDistance: 10
+preCrop: False
+size: 8
+freq: 0.5
+angle: math.pi/2
+save: False
+
+#Gabor_S8Fp5A135
+configName: Gabor_S8Fp5A135
+imageType: Gabor
+binWidth: 25
+verbose: False
+padDistance: 10
+preCrop: False
+size: 8
+freq: 0.5
+angle: 3*math.pi/4
+save: False
