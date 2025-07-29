@@ -1,0 +1,100 @@
+#RADIOMIC PIPELINE EXAMPLE
+GLOBAL_PARAMETERS:
+{
+	timer: True
+	verbose: True
+	job_scheduler: SLURM
+	multiprocessing: 10
+	new_log_file: True
+}
+
+CHECK_FOLDER:	#verify if a folder with DICOM as the correct structure
+{
+	inputFolder: /path/to/data
+	log: /path/to/logs/checkfolder.log
+}
+
+REORGANIZE:
+{
+	inputFolder: /path/to/data
+	outputFolder: /path/to/data_ready
+	inplace: False
+	log: /path/to/logs/reorganize.log
+}
+
+DCM2NII:
+{
+	inputFolder: /path/to/data_ready
+	outputFolder: /path/to/data_ready_nii
+	log: /path/to/logs/dcm2nii.log
+}
+
+SPATIAL_RESAMPLING:
+{
+	inputFolder: /path/to/data_ready_nii
+	outputFolder: /path/to/data_ready_nii_111
+	voxel_size: 1 #1mm3
+	image_interpolation: Linear
+	mask_interpolation: NearestNeighbor
+	suffix_name: 111
+	log: /path/to/logs/resampling.log
+}
+
+#Delete nifti folder after creating the nifti folder with resampling data
+DELETE:
+{
+	folder: /path/to/data_ready_nii
+	log: /path/to/logs/delete.log
+}
+
+MERGE_MASKS:
+{
+	inputFolder: /path/to/data_ready_nii_111
+	mask_name: msk_111.nii.gz
+	reg: Pan*
+	log: /path/to/logs/merge_masks.log
+}
+
+I-WINDOWING:
+{
+	inputFolder: /path/to/data_ready_nii_111
+	image_filename: img_111.nii.gz
+	suffix_name: W
+	window_name: CT_pancreas
+	log: /path/to/logs/windowing_sge.log
+}
+
+RADIOMICS:
+{
+	inputFolder: /path/to/data_ready_nii_111
+	outputFolder:/path/to/radiomics/folder
+	image_filename: img_111_W.nii.gz
+	mask_filename: msk_111.nii.gz
+	radiomics_filename: radiomics.xlsx
+	save_at_the_end: false
+	configs: /path/to/radiomics_CONFIGS/file	#Example in img2radiomics/v0.8.4/RADIOMICS_CONFIGS/CONFIGS_EXAMPLE
+	log: /path/to/logs/windowing_sge.log
+}
+
+F-HARMONIZE
+{
+	inputFolder: /path/to/radiomics/folder
+	radiomics_filename: radiomics.xlsx
+	batch_filename: batch.xlsx	#batch.xlsx need to be in /path/to/radiomics/folder
+	harmonized_radiomics_filename: harmonized_radiomics.xlsx
+	mode: internal
+	ref_batch: iterative
+	covars: gender 
+	log: /path/to/logs/fharmonize.log
+}
+
+F-NORMALIZE
+{
+	inputFolder: /path/to/radiomics/folder
+	radiomics_filename: harmonized_radiomics.xlsx
+	normalized_radiomics_filename: normalized_harmonized_radiomics.xlsx
+	stats_filename: radiomics_stats.xlsx
+	method: MinMax
+	mode: Internal
+	log: /path/to/logs/fnormalize.log
+}

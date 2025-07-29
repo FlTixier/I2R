@@ -1,0 +1,107 @@
+#RADIOMIC PIPELINE EXAMPLE
+GLOBAL_PARAMETERS:
+{
+	timer: True
+	verbose: True
+	job_scheduler: SGE
+	multiprocessing: 1
+	new_log_file: True
+}
+
+CHECK_FOLDER:	#verify if a folder with DICOM as the correct structure
+{
+	inputFolder: .
+	log: /path/to/logs/cron_check_folder_sge.log
+}
+
+REORGANIZE:
+{
+	inputFolder: .
+	outputFolderSuffix: ready
+	inplace: False
+	log: /path/to/logs/cron_reorganize_sge.log
+}
+
+DCM2NII:
+{
+	inputFolder: PREVIOUS_BLOCK_OUTPUT_FOLDER
+	outputFolderSuffix: nii
+	log: /path/to/logs/cron_dcm2nii_sge.log
+}
+
+SPATIAL_RESAMPLING:
+{
+	inputFolder: PREVIOUS_BLOCK_OUTPUT_FOLDER
+	outputFolderSuffix: 111
+	voxel_size: 1 #1mm3
+	image_interpolation: Linear
+	mask_interpolation: NearestNeighbor
+	suffix_name: 111
+	log: /path/to/logs/cron_resampling_sge.log
+}
+
+MERGE_MASKS:
+{
+	inputFolder: PREVIOUS_BLOCK_OUTPUT_FOLDER
+	mask_name: msk_111.nii.gz
+	reg: Pan*
+	log: /path/to/logs/cron_merge_masks_sge.log
+}
+
+I-WINDOWING:
+{
+	inputFolder: PREVIOUS_BLOCK_OUTPUT_FOLDER
+	image_filename: img_111.nii.gz
+	suffix_name: W
+	window_name: CT_pancreas
+	log: /path/to/logs/cron_windowing_sge.log
+}
+
+RADIOMICS:
+{
+	inputFolder: PREVIOUS_BLOCK_OUTPUT_FOLDER
+	outputFolder: /path/to/radiomics/folder
+	image_filename: img_111_W.nii.gz
+	mask_filename: msk_111.nii.gz
+	radiomics_filename: radiomics.xlsx
+	save_at_the_end: false
+	configs: /path/to/radiomics_CONFIGS/file	#Example in img2radiomics/v0.8.4/RADIOMICS_CONFIGS/CONFIGS_EXAMPLE
+	log: /path/to/logs/cron_radiomics_sge.log
+}
+
+F-HARMONIZE:
+{
+	inputFolder: /path/to/radiomics/folder
+	radiomics_filename: radiomics_auto.xlsx
+	batch_filename: /path/to/radiomics/folder/batch.xlsx
+	harmonized_radiomics_filename: harmonized_radiomics_auto.xlsx
+	ref_batch: iterative
+	mode: External
+	modelFolder: /path/to/folder/with/model
+	radiomics_from_model_filename: radiomics_stats_training.xlsx
+	batch_from_model_filename: batch_training.xlsx
+	log: /path/to/logs/cron_fharmonize_sge.log
+}
+
+F-NORMALIZE:
+{
+	inputFolder: /path/to/radiomics/folder
+	radiomics_filename: harmonized_radiomics_auto.xlsx
+	normalized_radiomics_filename: normalized_harmonized_radiomics_auto.xlsx
+	method: MinMax
+	mode: External
+	modelFolder: /path/to/folder/with/model
+	stats_filename: radiomics_stats_training.xlsx
+	log: /path/to/logs/cron_fnormalize_sge.log
+}
+
+PREDICT:
+{
+	inputFolder: /path/to/radiomics/folder
+	radiomics_filename: normalized_harmonized_radiomics_auto.xlsx
+	modelFolder: /path/to/folder/with/model
+	model_filename: model.pkl
+	predict_filename: model_prediction.xlsx
+	log: /path/to/logs/cron_model_prediction.log
+}
+
