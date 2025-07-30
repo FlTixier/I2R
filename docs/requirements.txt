@@ -5,5 +5,5 @@ tqdm
 nibabel
 dicom2nifti
 joblib
-simpleitk
+SimpleITK
 rt-utils
