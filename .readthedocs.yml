@@ -12,3 +12,6 @@ sphinx:
 python:
   install:
     - requirements: docs/requirements.txt
+
+  pre_install:
+    - pip install numpy
