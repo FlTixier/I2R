@@ -4,6 +4,8 @@
 
 ## Image2Radiomics (I2R)
 
+[📘 **View the Documentation**](https://i2r.readthedocs.io/en/latest/)
+
 This open-source Python package facilitates radiomics feature extraction from medical imaging, focusing on reproducibility across all processing steps before and after radiomics feature extraction. Rather than emphasizing feature extraction alone, this package ensures that every stage of the workflow is consistent and repeatable.
 
 Using a straightforward instruction file, the package allows users to perform a series of operations, including:
