@@ -26,16 +26,16 @@ Using a straightforward instruction file, the package allows users to perform a 
 
 If you use this framework in your research or publications, please cite the following paper:
 
-*LastName, FirstName, et al. "Title of the Paper."* *Journal Name*, vol. XX, no. XX, Year, pp. XXX–XXX.  
+*Tixier, Florent, et al. "Ensuring Reproducibility and Deploying Models with the Image2Radiomics Framework: An Evaluation of Image Processing on PanNET Model Performance."* *Cancers*, vol. XX, no. XX, 2025, pp. XXX–XXX.  
 DOI: [https://doi.org/your-doi-here](https://doi.org/your-doi-here)
 
 **BibTeX:**
 
 ```bibtex
-@article{yourkey2025,
-    author  = {LastName, FirstName and Others},
-    title   = {Title of the Paper},
-    journal = {Journal Name},
+@article{tixier2025,
+    author  = {Tixier, Florent and Lopez-Ramirez, Felipe and Syailendra, Emir and Blanco, Alejandra and Javed, Ammar A. and Chu, Linda C. and Kawamoto, Satomi and Fishman, Elliot K.},
+    title   = {Ensuring Reproducibility and Deploying Models with the Image2Radiomics Framework: An Evaluation of Image Processing on PanNET Model Performance},
+    journal = {Cancers},
     year    = {2025},
     volume  = {XX},
     number  = {XX},
