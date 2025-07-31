@@ -10,7 +10,5 @@ sphinx:
   configuration: docs/source/conf.py
 
 python:
-  pre_install:
-    - pip install numpy
   install:
     - requirements: docs/requirements.txt
