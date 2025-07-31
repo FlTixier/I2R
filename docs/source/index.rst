@@ -11,15 +11,15 @@ This open-source Python package facilitates radiomics feature extraction from me
 Using a straightforward instruction file, the package allows users to perform a series of operations, including:
 
 - Image conversion (DICOM to NIfTI)
-- Image resampling (using c3d or SimpleITK)
-- Image segmentation (using TotalSegmentator)
+- Image resampling (using `c3d<https://sourceforge.net/projects/c3d/>`_ or `SimpleITK<https://simpleitk.org/>`_)
+- Image segmentation (using `TotalSegmentator<https://github.com/wasserth/TotalSegmentator>`_)
 - Segmentation selection (by merging or excluding masks from a list)
 - Mask thresholding
 - Image windowing
 - Image harmonization
 - Feature normalization
-- Feature harmonization (with ComBAT)
-- Radiomics feature extraction (using pyradiomics)
+- Feature harmonization (with `ComBAT<https://github.com/Jfortin1/neuroCombat>`_)
+- Radiomics feature extraction (using `pyradiomics<https://pyradiomics.readthedocs.io/en/latest/>`_)
 - Model evaluation
 
 
@@ -30,22 +30,22 @@ Citation
 
 If you use this framework in your research or publications, please cite the following paper:
 
-*Tixier, Florent, et al. "Ensuring Reproducibility and Deploying Models with the Image2Radiomics Framework: An Evaluation of Image Processing on PanNET Model Performance."* *Cancers*, vol. XX, no. XX, 2025, pp. XXX–XXX. DOI: `https://doi.org/your-doi-here <https://doi.org/your-doi-here>`_
+*Tixier, Florent, et al. "Ensuring Reproducibility and Deploying Models with the Image2Radiomics Framework: An Evaluation of Image Processing on PanNET Model Performance."* *Cancers*, vol. XX, no. XX, 2025, pp. XXX–XXX. DOI: `https://doi.org/your-doi-here <https://doi.org/10.3390/cancersxxxxxxxx>`_
 
 BibTeX entry:
 
 .. code-block:: bibtex
 
-@article{tixier2025,
-    author  = {Tixier, Florent and Lopez-Ramirez, Felipe and Syailendra, Emir and Blanco, Alejandra and Javed, Ammar A. and Chu, Linda C. and Kawamoto, Satomi and Fishman, Elliot K.},
-    title   = {Ensuring Reproducibility and Deploying Models with the Image2Radiomics Framework: An Evaluation of Image Processing on PanNET Model Performance},
-    journal = {Cancers},
-    year    = {2025},
-    volume  = {XX},
-    number  = {XX},
-    pages   = {XXX--XXX},
-    doi     = {10.xxxx/xxxxx}
-}
+    @article{tixier2025,
+        author  = {Tixier, Florent and Lopez-Ramirez, Felipe and Syailendra, Emir and Blanco, Alejandra and Javed, Ammar A. and Chu, Linda C. and Kawamoto, Satomi and Fishman, Elliot K.},
+        title   = {Ensuring Reproducibility and Deploying Models with the Image2Radiomics Framework: An Evaluation of Image Processing on PanNET Model Performance},
+        journal = {Cancers},
+        year    = {2025},
+        volume  = {XX},
+        number  = {XX},
+        pages   = {XXX--XXX},
+        doi     = {10.3390/cancersxxxxxxxx}
+    }
 
 .. _coming_soon:
 
