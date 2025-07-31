@@ -7,4 +7,5 @@ dicom2nifti
 joblib
 SimpleITK
 rt-utils
+numpy
 pyradiomics
