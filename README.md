@@ -10,16 +10,16 @@ This open-source Python package facilitates radiomics feature extraction from me
 
 Using a straightforward instruction file, the package allows users to perform a series of operations, including:
 
-- Image conversion (DICOM to NIfTI)  
-- Image resampling (using c3d or SimpleITK)  
-- Image segmentation (using TotalSegmentator)  
+- Image conversion (DICOM to NIfTI)
+- Image resampling (using [c3d](https://sourceforge.net/projects/c3d/) or [SimpleITK](https://simpleitk.org/))  
+- Image segmentation (using [TotalSegmentator](https://github.com/wasserth/TotalSegmentator))  
 - Segmentation selection (by merging or excluding masks from a list)  
 - Mask thresholding  
 - Image windowing  
 - Image harmonization  
 - Feature normalization  
-- Feature harmonization (with ComBAT)  
-- Radiomics feature extraction (using PyRadiomics)  
+- Feature harmonization (with [ComBAT](https://github.com/Jfortin1/neuroCombat))  
+- Radiomics feature extraction (using [PyRadiomics](https://pyradiomics.readthedocs.io/en/latest/))  
 - Model evaluation  
 
 ---
@@ -29,7 +29,7 @@ Using a straightforward instruction file, the package allows users to perform a 
 If you use this framework in your research or publications, please cite the following paper:
 
 *Tixier, Florent, et al. "Ensuring Reproducibility and Deploying Models with the Image2Radiomics Framework: An Evaluation of Image Processing on PanNET Model Performance."* *Cancers*, vol. XX, no. XX, 2025, pp. XXX–XXX.  
-DOI: [https://doi.org/your-doi-here](https://doi.org/your-doi-here)
+DOI: [https://doi.org/10.3390/cancersxxxxxxxx](https://doi.org/10.3390/cancersxxxxxxxx)
 
 **BibTeX:**
 
@@ -42,7 +42,7 @@ DOI: [https://doi.org/your-doi-here](https://doi.org/your-doi-here)
     volume  = {XX},
     number  = {XX},
     pages   = {XXX--XXX},
-    doi     = {10.xxxx/xxxxx}
+    doi     = {10.3390/cancersxxxxxxxx}
 }
 ```
 ---
