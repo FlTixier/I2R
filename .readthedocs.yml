@@ -5,12 +5,12 @@ build:
   os: ubuntu-22.04
   tools:
     python: "3.11"
-  pre_install:
-    - pip install numpy
 
 sphinx:
   configuration: docs/source/conf.py
 
 python:
+  pre_install:
+    - pip install numpy
   install:
     - requirements: docs/requirements.txt
