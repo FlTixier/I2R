@@ -28,7 +28,7 @@ Using a straightforward instruction file, the package allows users to perform a 
 
 If you use this framework in your research or publications, please cite the following paper:
 
-*Tixier, Florent, et al. "Ensuring Reproducibility and Deploying Models with the Image2Radiomics Framework: An Evaluation of Image Processing on PanNET Model Performance."* *Cancers*, vol. XX, no. XX, 2025, pp. XXX–XXX.  
+*Tixier, Florent, et al. "Ensuring Reproducibility and Deploying Models with the Image2Radiomics Framework: An Evaluation of Image Processing on PanNET Model Performance."* *Cancers*, vol. 17, no. 15, 2025.  
 DOI: [https://doi.org/10.3390/cancers17152552](https://doi.org/10.3390/cancers17152552)
 
 **BibTeX:**
