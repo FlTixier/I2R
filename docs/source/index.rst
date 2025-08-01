@@ -30,7 +30,7 @@ Citation
 
 If you use this framework in your research or publications, please cite the following paper:
 
-*Tixier, Florent, et al. "Ensuring Reproducibility and Deploying Models with the Image2Radiomics Framework: An Evaluation of Image Processing on PanNET Model Performance."* *Cancers*, vol. XX, no. XX, 2025, pp. XXX–XXX. DOI: `https://doi.org/10.3390/cancersxxxxxxxx <https://doi.org/10.3390/cancersxxxxxxxx>`_
+*Tixier, Florent, et al. "Ensuring Reproducibility and Deploying Models with the Image2Radiomics Framework: An Evaluation of Image Processing on PanNET Model Performance."* *Cancers*, vol. 17, no. 15, 2025: `https://doi.org/10.3390/cancers17152552 <https://doi.org/10.3390/cancers17152552>`_
 
 BibTeX entry:
 
@@ -41,10 +41,9 @@ BibTeX entry:
         title   = {Ensuring Reproducibility and Deploying Models with the Image2Radiomics Framework: An Evaluation of Image Processing on PanNET Model Performance},
         journal = {Cancers},
         year    = {2025},
-        volume  = {XX},
-        number  = {XX},
-        pages   = {XXX--XXX},
-        doi     = {10.3390/cancersxxxxxxxx}
+        volume  = {17},
+        number  = {15},
+        doi     = {10.3390/cancers17152552}
     }
 
 .. _coming_soon:
